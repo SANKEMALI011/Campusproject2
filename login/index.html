@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="login-box">
+            <h2>Login</h2>
+            <div class="tabs">
+                <button class="tab active" onclick="switchTab(event, 'student')">Student</button>
+                <button class="tab" onclick="switchTab(event, 'company')">Company</button>
+                <button class="tab" onclick="switchTab(event, 'college')">College</button>
+            </div>
+            <form id="student" class="form active">
+                <input type="email" placeholder="Student Email" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit">Login</button>
+            </form>
+            <form id="company" class="form">
+                <input type="email" placeholder="Company Email" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit">Login</button>
+            </form>
+            <form id="college" class="form">
+                <input type="email" placeholder="College Email" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit">Login</button>
+            </form>
+            <br>
+            <a href="Register.html"><ion-icon name="submit" type="submit"></ion-icon>Register</a>
+
+        </div>
+    </div>
+     <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="../CSS/styles1.css">
+</head>
+<body>
+    <div class="container"> 
+        <h2>Student Register</h2>
+        <form id="student-form">
+            <label>Full Name:</label>
+            <input type="text" id="name" required>
+
+            <label>Email:</label>
+            <input type="email" id="email" required>
+
+            <label>Phone Number:</label>
+            <input type="text" id="phone" required>
+
+            <label>Course:</label>
+            <input type="text" id="course" required>
+
+            <label>CGPA:</label>
+            <input type="text" id="cgpa" required>
+
+            <label>Upload Resume:</label>
+            <input type="file" id="resume" required>
+
+            <button type="submit">Save Profile</button>
+        </form>
+    </div>
+
+    <button onclick="goBack()">Go Back</button>
+
+    <div class="container">
+        <h3>Company Requirements</h3>
+        <div id="job-listings"></div>
+        <button onclick="logout()">Exit</button>
+    </div>
+   
+    <script> 
+ 
+    // Function to save student data to localStorage
+    document.getElementById("student-form").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent form submission
+
+        // Get existing students from localStorage or initialize an empty array
+        let students = JSON.parse(localStorage.getItem("students")) || [];
+
+        // Capture form input values
+        const studentData = {
+            name: document.getElementById("name").value,
+            email: document.getElementById("email").value,
+            phone: document.getElementById("phone").value,
+            course: document.getElementById("course").value,
+            cgpa: document.getElementById("cgpa").value,
+            resume: document.getElementById("resume").files[0] ? document.getElementById("resume").files[0].name : "Not Uploaded"
+        };
+        // Add new student data to the array
+        students.push(studentData);
+        // Save updated array back to localStorage
+        localStorage.setItem("students", JSON.stringify(students));
+        // Show success message
+        alert("Profile Saved Successfully!");
+
+        // Reset the form
+        document.getElementById("student-form").reset();
+    });
+
+
+// Load campany requirement
+function loadJobRequirements() {
+    const jobList = document.getElementById("job-listings");
+    let requirements = JSON.parse(localStorage.getItem("companyRequirements")) || [];
+
+    jobList.innerHTML = "";
+
+    if (requirements.length === 0) {
+        jobList.innerHTML = "<p>No job requirements available yet.</p>";
+        return;
+    }
+
+    requirements.forEach((job, index) => {
+        jobList.innerHTML += `
+            <div class="card">
+                <h3>${job.position}</h3>
+                <p>${job.description}</p>
+                <p><b>Location:</b> ${job.location}</p>
+                <p><b>Salary:</b> ${job.package} LPA</p>
+                <p><b>Job Type:</b> ${job.jobType}</p>
+                <p><b>Posted:</b> ${job.timePosted}</p>
+            </div>
+        `;
+    });
+}
+function deleteJobRequirement(index) {
+    let requirements = JSON.parse(localStorage.getItem("companyRequirements")) || [];
+    requirements.splice(index, 1);
+    localStorage.setItem("companyRequirements", JSON.stringify(requirements));
+    loadJobRequirements();  
+}
+document.addEventListener("DOMContentLoaded", loadJobRequirements);
+
+function goBack() {
+    window.history.back();
+}
+function logout() {
+    window.location.href = "index.html";
+}
+function applyJob(index) {
+    alert("Applied Successfully for Job Position: " + JSON.parse(localStorage.getItem("companyRequirements"))[index].position);
+}
+
+    </script>
+    <script src="../login/script.js"></script>
+</body>
+</html>

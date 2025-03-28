@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College & Company Relations</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Anantrao Pawar College Of Engineering Pune</h1>
+        <p>Connecting students with top companies for a brighter future.</p>
+    </header>
+
+    <section class="container">
+        <div class="section">
+            <h2>Campus Placements</h2>
+            <p>Organizing recruitment drives, inviting companies, and coordinating placements.</p>
+        </div>
+
+        <div class="section">
+            <h2>Student Training & Skill Development</h2>
+            <p>Conducting resume-building workshops, mock interviews, and soft skills training.</p>
+        </div>
+
+        <div class="section">
+            <h2>Internship Opportunities</h2>
+            <p>Helping students secure internships and maintaining a database of internship providers.</p>
+        </div>
+
+        <div class="section">
+            <h2>Career Guidance & Counseling</h2>
+            <p>Advising students on career paths, higher education, and job applications.</p>
+        </div>
+
+        <div class="section">
+            <h2>Industry Collaboration</h2>
+            <p>Building corporate partnerships and staying updated on industry trends.</p>
+        </div>
+
+        <div class="section">
+            <h2>Placement Record Maintenance</h2>
+            <p>Tracking student placements and providing statistics to the college administration.</p>
+        </div>
+    </section>
+    <section>
+        <header>
+            <h1>Upload Student Data</h1>
+        </header>
+        <div class="container2">
+            <h1>📚 Student Data Manager</h1>
+    
+            <div class="form-section">
+                <h2>➕ Add Student</h2>
+                <form id="student-form">
+                    <input type="text" id="student-name" placeholder="Full Name" required>
+                    <input type="text" id="phone-number" placeholder="Phone Number" required>
+                    <input type="email" id="email" placeholder="Email" required>
+                    <input type="text" id="degree" placeholder="Degree" required>
+                    <input type="text" id="college-name" placeholder="College Name" required>
+                    <input type="number" id="cgpa" placeholder="CGPA" required step="0.01">
+                    <input type="file" id="resume" required>
+                    <button type="submit">Upload Student</button>
+                </form>
+            </div>
+    
+            <div class="csv-section">
+                <h2>📂 CSV Upload</h2>
+                <input type="file" id="file-upload" accept=".csv">
+                <!-- <button onclick="downloadCSV()">Download CSV</button> -->
+            </div>
+    
+            <div class="table-section">
+                <h2>📋 Student List</h2>
+                <table id="student-table">
+                    <thead>
+                        <tr>
+                            <th>Full Name</th>
+                            <th>Phone</th>
+                            <th>Email</th>
+                            <th>Degree</th>
+                            <th>College</th>
+                            <th>CGPA</th>
+                            <th>Resume</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Data will be inserted here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+    
+
+    <footer>
+        
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Dashboard</title>
+    <link rel="stylesheet" href="styles2.css">
+    <!-- <link rel="stylesheet" href="styless1.css"> -->
+    
+</head>
+<header>
+    <h1>Company Dashboard</h1>
+</header>
+
+<section class="student-section">
+    <div class="student-profile">
+        <h2>Student Profiles</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Full Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Course</th>
+                    <th>CGPA</th>
+                    <th>Resume</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="student-list">
+                <!-- Student data will be inserted here -->
+            </tbody>
+        </table>
+    </div>
+    <button class="btn-primary" onclick="goBack()">Go Back</button>
+</section>
+
+<section class="student-data">
+    <div class="student-list">
+        <h1>Student Data Uploaded by Colleges</h1>
+        <label for="college-filter">Filter by College:</label>
+        <select id="college-filter">
+            <option value="all">All Colleges</option>
+        </select> 
+        <label for="cgpa-filter">Filter by CGPA:</label>
+        <select id="cgpa-filter">
+            <option value="all">All CGPA</option>
+        </select>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Full Name</th>
+                    <th>Phone</th>
+                    <th>Email</th>
+                    <th>Degree</th>
+                    <th>College</th>
+                    <th>CGPA</th>
+                    <th>Resume</th>
+                </tr>
+            </thead>
+            <tbody id="filtered-student-list">
+                <!-- Filtered student data will be loaded here -->
+            </tbody>
+        </table>
+    </div>
+</section>
+<br><br>
+
+<section class="job-section">
+    <div class="container">
+        <h2>Add Job Requirement</h2>
+        <form id="job-form">
+            <label>Position:</label>
+            <input type="text" id="position" required>
+
+            <label>Description:</label>
+            <input type="text" id="description" required>
+
+            <label>Location:</label>
+            <input type="text" id="location" required>
+
+            <label>Salary Package (LPA):</label>
+            <input type="text" id="package" required>
+
+            <label>Job Type:</label>
+            <select id="jobType">
+                <option value="Full-time">Full-time</option>
+                <option value="Part-time">Part-time</option>
+                <option value="Internship">Internship</option>
+            </select>
+
+            <button type="submit" class="btn-primary">Add Job</button>
+        </form>
+    </div>
+</section>
+<section>
+    <div></div>
+</section>
+
+<script src="../login/script.js"></script>
+<script src="script.js"></script>
+<script>
+</script>
+</body>
+</html>
